@@ -73,11 +73,13 @@ public class MemberRepository {
     }
 
     private Member update(Member member) {
-        // TODO: implemented
         /*
             update 쿼리를 날린다.
             반환값은 id를 담아서 반환한다.
          */
+        var sql = String.format("UPDATE %s set email = :email, nickname = :nickname, birthday = :birthday where id = :id", TABLE);
+        SqlParameterSource params = new BeanPropertySqlParameterSource(member);
+        int update = namedParameterJdbcTemplate.update(sql, params);
         return member;
     }
 
