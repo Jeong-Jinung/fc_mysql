@@ -1,4 +1,4 @@
-package com.example.fastcampusmysql.controller;
+package com.example.fastcampusmysql.application.controller;
 
 import com.example.fastcampusmysql.domain.member.dto.MemberDto;
 import com.example.fastcampusmysql.domain.member.dto.MemberNicknameHistoryDto;
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MemberController {
 
-    final private MemberWriteService memberWriteService;
-    final private MemberReadService memberReadService;
+    private final MemberWriteService memberWriteService;
+    private final MemberReadService memberReadService;
 
     @PostMapping("/members")
     public MemberDto register(@RequestBody RegisterMemberCommand command) {

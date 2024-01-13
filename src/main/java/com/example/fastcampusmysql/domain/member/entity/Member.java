@@ -9,17 +9,18 @@ import org.springframework.util.Assert;
 
 @Getter
 public class Member {
-    final private Long id;
+
+    private final Long id;
 
     private String nickname;
 
-    final private String email;
+    private final String email;
 
-    final private LocalDate birthday;
+    private final LocalDate birthday;
 
-    final private LocalDateTime createdAt;
+    private final LocalDateTime createdAt;
 
-    final private static Long NAME_MAX_LENGTH = 10L;
+    private static final Long NAME_MAX_LENGTH = 10L;
 
     @Builder
     public Member(Long id, String nickname, String email, LocalDate birthday, LocalDateTime createdAt) {
