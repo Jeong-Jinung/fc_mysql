@@ -28,4 +28,10 @@ public class PostWriteService {
         postRepository.save(post); // 데이터저장
     }
 
+    public void likePostByOptimisticLock(Long postId) {
+        var post = postRepository.findById(postId, false).orElseThrow(); // 데이터조회
+        post.incrementLikeCount(); // 데이터변경
+        postRepository.save(post); // 데이터저장
+    }
+
 }
